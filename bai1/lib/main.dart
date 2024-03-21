@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 // import 'package:intl/intl.dart';
 void main() {
   runApp(const MyApp());
@@ -43,46 +44,77 @@ class MyApp extends StatelessWidget {
                     ],
                   ),
                 ),
-                Container(
-                  decoration: const BoxDecoration(
-                    color: Color.fromRGBO(232, 232, 232,0.3),
-                    borderRadius: BorderRadius.all(Radius.circular(20))
-                  ),
-                  padding: const EdgeInsets.all(10),
-                  margin: const EdgeInsets.fromLTRB(20, 0, 20, 0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Image.asset('assets/images/logo.jpg',width: 100),
-                          const Column(
-                            children: [
-                              Text("Thời khoá biểu"),
-                              Text("16 tháng 3",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 22),)
-                            ],
-                          ),
-                          ElevatedButton(
-                              onPressed:(){},
-                              style: ElevatedButton.styleFrom(
-                                  backgroundColor: Color.fromRGBO(0, 0, 255, 1)
-                              ),
-                              child: const Text('Lịch thi',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white,height: 3),)
-                          )
-                        ],
+                Stack(
+                  children: [
+                    Positioned(
+                      top: -20,
+                      left: 10,
+                      child: Image.asset('assets/images/logo.jpg', width: 100,fit: BoxFit.cover,),
+                    ),
+                    Container(
+                      decoration: const BoxDecoration(
+                        color: Color.fromRGBO(232, 232, 232, 0.3),
+                        borderRadius: BorderRadius.all(Radius.circular(20)),
                       ),
-                      const Row(
+                            padding:  EdgeInsets.fromLTRB(150, 10, 10, 10),
+                            margin: const EdgeInsets.fromLTRB(10, 20, 20, 0),
+                            height: 100,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.stretch,
+                              children: [
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                  children: [
+                                    const Column(
+                                      children: [
+                                        Text("Thời khoá biểu"),
+                                        Text(
+                                          "16 tháng 3",
+                                          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
+                                        ),
+                                      ],
+                                    ),
+                                    Container(
+                                      margin: const EdgeInsets.fromLTRB(100, 0, 0, 0),
+                                      child: ElevatedButton(
+                                        onPressed: () {},
+                                        style: ElevatedButton.styleFrom(
+                                          backgroundColor: Color.fromRGBO(0, 0, 255, 1),
+                                        ),
+                                        child: const Text(
+                                          'Lịch thi',
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.white,
+                                            height: 3,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                    Positioned(
+                      top: 80,
+                      left: 120,
+                      child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text("Không có lịch!",style: TextStyle(fontSize: 18)),
+                          Text("Không có lịch!", style: TextStyle(fontSize: 18), textAlign: TextAlign.center),
                           SizedBox(width: 6),
-                          Text("Xem thêm TKB",style: TextStyle(fontSize: 18,color: Colors.blueAccent),)
+                          Text(
+                            "Xem thêm TKB",
+                            style: TextStyle(fontSize: 18, color: Colors.blueAccent),
+                          ),
                         ],
-                      )
-                    ],
-                  ),
+                      ),
+                    )
+
+                  ]
                 ),
+
                 Container(
                   alignment: Alignment.topLeft,
                     padding: const EdgeInsets.only(left: 20,top: 10,right: 20,bottom: 20),
@@ -341,6 +373,7 @@ class MyApp extends StatelessWidget {
                 )
               ],
             )
+
     ));
   }
 }
