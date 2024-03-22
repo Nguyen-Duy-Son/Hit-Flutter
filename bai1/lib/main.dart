@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
               children: [
                 Container(
                   padding: const  EdgeInsets.all(20),
-                  margin:EdgeInsets.fromLTRB(0, 10, 0, 0),
+                  margin:const EdgeInsets.fromLTRB(0, 10, 0, 0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -47,70 +47,79 @@ class MyApp extends StatelessWidget {
                 Stack(
                   children: [
                     Positioned(
-                      top: -20,
+                      top: -10,
                       left: 10,
                       child: Image.asset('assets/images/logo.jpg', width: 100,fit: BoxFit.cover,),
                     ),
                     Container(
                       decoration: const BoxDecoration(
-                        color: Color.fromRGBO(232, 232, 232, 0.3),
+                        color: Color.fromRGBO(232, 232, 232, 0.5),
                         borderRadius: BorderRadius.all(Radius.circular(20)),
                       ),
-                            padding:  EdgeInsets.fromLTRB(150, 10, 10, 10),
-                            margin: const EdgeInsets.fromLTRB(10, 20, 20, 0),
-                            height: 100,
+                      margin: const EdgeInsets.fromLTRB(10, 30, 20, 0),
+                      child: Column(
+                        children: [
+                          Container(
+                            decoration: const BoxDecoration(
+                              color: Color.fromRGBO(232, 232, 232, 0.3),
+                              borderRadius: BorderRadius.all(Radius.circular(20)),
+                            ),
+                            padding:  const EdgeInsets.fromLTRB(160, 10, 10, 10),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.stretch,
                               children: [
                                 Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                  children: [
-                                    const Column(
-                                      children: [
-                                        Text("Thời khoá biểu"),
-                                        Text(
-                                          "16 tháng 3",
-                                          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
-                                        ),
-                                      ],
-                                    ),
-                                    Container(
-                                      margin: const EdgeInsets.fromLTRB(100, 0, 0, 0),
-                                      child: ElevatedButton(
-                                        onPressed: () {},
-                                        style: ElevatedButton.styleFrom(
-                                          backgroundColor: Color.fromRGBO(0, 0, 255, 1),
-                                        ),
-                                        child: const Text(
-                                          'Lịch thi',
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.white,
-                                            height: 3,
+                                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                        children: [
+                                          const Column(
+                                            children: [
+                                              Text("Thời khoá biểu"),
+                                              Text(
+                                                "16 tháng 3",
+                                                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
+                                              ),
+                                            ],
                                           ),
-                                        ),
+                                          Container(
+                                            margin: const EdgeInsets.fromLTRB(100, 0, 0, 0),
+                                            child: ElevatedButton(
+                                              onPressed: () {},
+                                              style: ElevatedButton.styleFrom(
+                                                backgroundColor: const Color.fromRGBO(0, 0, 255, 1),
+                                              ),
+                                              child: const Text(
+                                                'Lịch thi',
+                                                style: TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                  color: Colors.white,
+                                                  height: 3,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ],
                                       ),
-                                    ),
-                                  ],
+                                    ],
+                                  ),
+                                ),
+                          Container(
+                            alignment: Alignment.center,
+                            child: const Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text("Không có lịch!", style: TextStyle(fontSize: 18), textAlign: TextAlign.center),
+                                SizedBox(width: 6),
+                                Text(
+                                  "Xem thêm TKB",
+                                  style: TextStyle(fontSize: 18, color: Colors.blueAccent),
                                 ),
                               ],
                             ),
-                          ),
-                    Positioned(
-                      top: 80,
-                      left: 120,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text("Không có lịch!", style: TextStyle(fontSize: 18), textAlign: TextAlign.center),
-                          SizedBox(width: 6),
-                          Text(
-                            "Xem thêm TKB",
-                            style: TextStyle(fontSize: 18, color: Colors.blueAccent),
-                          ),
+                          )
                         ],
                       ),
-                    )
+                    ),
+
 
                   ]
                 ),
@@ -131,7 +140,7 @@ class MyApp extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       Container(
-                        padding:const EdgeInsets.fromLTRB(0, 0, 0, 20),
+                        padding:const EdgeInsets.fromLTRB(0, 0, 0, 10),
                         child: const Row(
                           children: [
                             Expanded(// sử dụng để mở rộng 1 widget con , lấp đầy ko gian trống có sẵn trong widget cha
@@ -169,7 +178,7 @@ class MyApp extends StatelessWidget {
                   children: [
                     Container(
                       padding: const EdgeInsets.all(10),
-                      margin: EdgeInsets.fromLTRB(0, 0, 0, 10),
+                      margin: const EdgeInsets.fromLTRB(0, 0, 0, 10),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
