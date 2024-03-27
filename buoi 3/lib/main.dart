@@ -139,9 +139,8 @@ class _MyAppState extends State<MyApp> {
           timer.cancel();
           setState(() {
             status=3;
+            remainingTime=10;
           });
-          remainingTime=10;
-          startGame();
         }
       });
     });
