@@ -25,6 +25,7 @@ class _MyAppState extends State<MyApp> {
   int check1=0,check2=0;
   int remainingTime = 10;
   late TinhToan ttRandom;
+  late Timer timerPre;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -101,8 +102,8 @@ class _MyAppState extends State<MyApp> {
   void checkTrueResult(bool check){
     maxScore = max(score, maxScore);
     if(check==true){
+      timerPre.cancel();
       setState(() {
-
         score++;
       });
       maxScore = max(score, maxScore);
@@ -111,12 +112,14 @@ class _MyAppState extends State<MyApp> {
     }
     else {
       setState(() {
+        timerPre.cancel();
         status=3;
       });
     }
   }
   void checkFalseResult(bool check){
     if(check==false){
+      timerPre.cancel();
       setState(() {
         score++;
       });
@@ -126,17 +129,19 @@ class _MyAppState extends State<MyApp> {
     }
     else {
       setState(() {
+        timerPre.cancel();
         status=3;
       });
     }
   }
   void startGame() {
     ttRandom = TinhToan.random();
-    Timer.periodic(const Duration(seconds: 1), (timer) {
+    timerPre = Timer.periodic(const Duration(seconds: 1), (timer) {
       setState(() {
         remainingTime--;
         if (remainingTime == 0) {
           timer.cancel();
+          timerPre.cancel();
           setState(() {
             status=3;
             remainingTime=10;
