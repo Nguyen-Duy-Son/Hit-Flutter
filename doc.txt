@@ -1,0 +1,6 @@
+buôi3:
+clipbehaiour: clip.none // ko bị cắt
+mediaQUery: 
+staleless Widget: ko có phần tử thay đổi, stateful Widget: khi trong phần tử có thay đổi
+lifeCycle, BUTTONiCON, itemIcon	, gestrucDetector, inkWell, iconButton
+timeMer
