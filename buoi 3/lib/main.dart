@@ -22,9 +22,9 @@ class _MyAppState extends State<MyApp> {
   int maxScore = 0;
   int minScore = 0;
   int cnt = 0;
+  int check1=0,check2=0;
   int remainingTime = 10;
   late TinhToan ttRandom;
-  late Timer _timer;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -102,6 +102,7 @@ class _MyAppState extends State<MyApp> {
     maxScore = max(score, maxScore);
     if(check==true){
       setState(() {
+
         score++;
       });
       maxScore = max(score, maxScore);
@@ -139,6 +140,7 @@ class _MyAppState extends State<MyApp> {
           setState(() {
             status=3;
           });
+          remainingTime=10;
           startGame();
         }
       });
@@ -301,6 +303,7 @@ class _MyAppState extends State<MyApp> {
                           score=0;
                           status = 1;
                           remainingTime=10;
+                          startGame();
                         });
                       },
                       color: Colors.red,
@@ -349,7 +352,7 @@ class TinhToan {
     Random random = Random();
     int number1 = random.nextInt(100) + 1;
     int number2 = random.nextInt(100) + 1;
-    int result = random.nextInt(100) + 1;
+    // int result = random.nextInt(100) + 1;
     String dauTinh = list[random.nextInt(4)];
     var kq;
     if (dauTinh == '+') {
@@ -361,6 +364,8 @@ class TinhToan {
     } else {
       kq = number1 / number2;
     }
+    List listResult = [kq-2,kq-1,kq,kq+1,kq+2,kq+3];
+    int result = listResult[random.nextInt(6)];
     bool tinhDungSai = kq == result;
     return TinhToan(number1, number2, result, dauTinh, tinhDungSai);
   }
